@@ -2,7 +2,6 @@
 
 namespace Waterloocode\Router\Console\Commands;
 
-use Illuminate\Console\Command;
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Filesystem\Filesystem;
 // use Illuminate\Support\Composer;
@@ -49,8 +48,6 @@ class MakeRoute extends GeneratorCommand
     public function handle()
     {
         //
-        // $this->router = $this->argument('router');
-        $this->info('Display this on the screen');
         $this->fire();
     }
 
@@ -72,6 +69,6 @@ class MakeRoute extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace.'\Console\Commands';
+        return $rootNamespace.'\Http\Routes';
     }
 }
