@@ -1,0 +1,13 @@
+<?php
+/**
+* 
+*/
+namespace DummyNamespace;
+use Illuminate\Contracts\Routing\Registrar;
+class DummyClass
+{
+	public function map(Registrar $router)
+	{
+		
+	}
+}
