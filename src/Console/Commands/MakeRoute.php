@@ -69,6 +69,9 @@ class MakeRoute extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace)
     {
+        // echo config("router.namespace.route")."\n";
+        // echo $rootNamespace.'\Http\Routes'."\n";
+        // dd("over");
         return $rootNamespace.'\Http\Routes';
     }
 }

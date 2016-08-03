@@ -25,6 +25,9 @@ class RouteServiceProvider extends ServiceProvider
     public function boot(Router $router)
     {
         //
+        $this->publishes([
+            __DIR__.'/../config/router.php' => config_path('router.php'),
+        ]);
         $this->namespace = config("router.namespace.controller",$this->namespace);
         parent::boot($router);
     }
