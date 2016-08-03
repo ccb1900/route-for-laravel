@@ -2,7 +2,7 @@
     "name": "bluegeek/route-for-laravel",
     "description": "route for laravel",
     "require": {
-        "laravel/laravel": "5.*"
+
     },
     "authors": [
         {
