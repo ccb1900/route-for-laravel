@@ -2,8 +2,8 @@
 
 namespace Waterloocode\Router\Providers;
 
-use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Routing\Router;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -19,28 +19,30 @@ class RouteServiceProvider extends ServiceProvider
     /**
      * Define your route model bindings, pattern filters, etc.
      *
-     * @param  \Illuminate\Routing\Router  $router
+     * @param \Illuminate\Routing\Router $router
+     *
      * @return void
      */
     public function boot(Router $router)
     {
         //
-        $this->namespace = config("router.namespace.controller",$this->namespace);
+        $this->namespace = config('router.namespace.controller', $this->namespace);
         parent::boot($router);
     }
 
     /**
      * Define the routes for the application.
      *
-     * @param  \Illuminate\Routing\Router  $router
+     * @param \Illuminate\Routing\Router $router
+     *
      * @return void
      */
     public function map(Router $router)
     {
         $router->group(['namespace' => $this->namespace], function ($router) {
             // require app_path('Http/routes.php');
-            foreach (glob(config("router.path.router",app_path('Http//Routes')) . '/*.php') as $file) {
-                $this->app->make(config("router.namespace.route",'App\\Http\\Routes\\') . basename($file, '.php'))->map($router);
+            foreach (glob(config('router.path.router', app_path('Http//Routes')).'/*.php') as $file) {
+                $this->app->make(config('router.namespace.route', 'App\\Http\\Routes\\').basename($file, '.php'))->map($router);
             }
         });
     }

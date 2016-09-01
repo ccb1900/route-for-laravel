@@ -4,6 +4,7 @@ namespace Waterloocode\Router\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Filesystem\Filesystem;
+
 // use Illuminate\Support\Composer;
 
 class MakeRoute extends GeneratorCommand
@@ -61,10 +62,11 @@ class MakeRoute extends GeneratorCommand
         return __DIR__.'/stubs/router.stub';
     }
 
-     /**
+    /**
      * Get the default namespace for the class.
      *
-     * @param  string  $rootNamespace
+     * @param string $rootNamespace
+     *
      * @return string
      */
     protected function getDefaultNamespace($rootNamespace)
